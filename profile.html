@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <style>
+        @font-face {
+    font-family: hunt;
+    src: url(./magnetar_2/Magnetar.otf);
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+        } .navbar {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+        }
+
+        
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 6rem auto 2rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .profile-sidebar {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            display: block;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-picture .edit-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            padding: 0.5rem;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .profile-picture:hover .edit-overlay {
+            opacity: 1;
+        }
+
+        .profile-stats {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .main-content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .edit-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-btn:hover {
+            background: #2980b9;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .progress-chart {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .chart-container {
+            height: 300px;
+            margin-top: 1rem;
+            position: relative;
+            background: #fff;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .achievement-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-card i {
+            font-size: 2rem;
+            color: #3498db;
+            margin-bottom: 0.5rem;
+        }
+
+        .save-btn {
+            background: #2ecc71;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .save-btn:hover {
+            background: #27ae60;
+        }
+
+        .goals-list {
+            list-style: none;
+        }
+
+        .goal-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .goal-progress {
+            flex: 1;
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #3498db;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" style="font-family: hunt;"class="logo">FitLife</a>
+            <div class="nav-links">
+                <a href="./profile.html"><div style="display: flex;justify-content: center;align-items: center;font-size: 20px;border-radius: 100px;height: 30px;width: 30px;background-color: white;"<i class="ri-user-3-fill"></i></div></a>
+                <a href="./main.html"><i class="fas fa-chart-bar"></i> REMINDERS</a>
+                <a href="diet-plan.html"><i class="fas fa-utensils"></i> Diet Plan</a>
+                <a href="workout-plan.html"><i class="fas fa-dumbbell"></i> Workout Plan</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <aside class="profile-sidebar">
+            <div class="profile-picture">
+                <img src="./me.jpg" alt="Profile Picture">
+                <div class="edit-overlay">
+                    <i class="fas fa-camera"></i> Change Photo
+                </div>
+            </div>
+            <h2 id="userName">yash Bharti</h2>
+            <p id="userEmail">yashbharti1824@gmail.com</p>
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span>Member Since</span>
+                    <span>Jan 2024</span>
+                </div>
+                <div class="stat-item">
+                    <span>Workouts Completed</span>
+                    <span>24</span>
+                </div>
+                <div class="stat-item">
+                    <span>Current Streak</span>
+                    <span>5 days</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-section">
+                <div class="section-title">
+                    <h3>Personal Information</h3>
+                    <button class="edit-btn" onclick="toggleEdit('personal-info')">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                </div>
+                <form id="personal-info" onsubmit="return savePersonalInfo(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" value="Yash Bharti" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="yashbharti1824@gmail.com" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" value="9699430163" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">Date of Birth</label>
+                            <input type="date" id="birthdate" value="2025-02-02" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" >
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="save-btn hidden">Save Changes</button>
+                </form>
+            </section>
+
+            <section class="content-section">
+                <div class="section-title">
+                    <h3>Fitness Goals</h3>
+                    <button class="edit-btn" onclick="addGoal()">
+                        <i class="fas fa-plus"></i> Add Goal
+                    </button>
+                </div>
+                <ul class="goals-list">
+                    <li class="goal-item">
+                        <i class="fas fa-running"></i>
+                        <div>
+                            <h4>Weight Loss Goal</h4>
+                            <div class="goal-progress">
+                                <div class="progress-bar" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <span>60%</span>
+                    </li>
+                    <li class="goal-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <div>
+                            <h4>Strength Training</h4>
+                            <div class="goal-progress">
+                                <div class="progress-bar" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                        <span>45%</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <div class="section-title">
+                    <h3>Progress Tracking</h3>
+                </div>
+                <div class="progress-chart">
+                    <div class="chart-container">
+                        <!-- Chart will be added here -->
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <div class="section-title">
+                    <h3>Achievements</h3>
+                </div>
+                <div class="achievement-grid">
+                    <div class="achievement-card">
+                        <i class="fas fa-medal"></i>
+                        <h4>First Workout</h4>
+                        <p>Completed first workout session</p>
+                    </div>
+                    <div class="achievement-card">
+                        <i class="fas fa-fire"></i>
+                        <h4>5 Day Streak</h4>
+                        <p>Worked out for 5 days in a row</p>
+                    </div>
+                    <div class="achievement-card">
+                        <i class="fas fa-trophy"></i>
+                        <h4>Weight Goal</h4>
+                        <p>Reached first weight milestone</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html> 

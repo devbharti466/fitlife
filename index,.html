@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Your Fitness Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #2c3e50;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3498db;
+        }
+
+     
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#"style="font-family: hunt;" class="logo">FitLife</a>
+            <div class="nav-links">
+                <a href="./profile.html"><div style="display: flex;justify-content: center;align-items: center;font-size: 20px;border-radius: 100px;height: 30px;width: 30px;background-color: white;"<i class="ri-user-3-fill"></i></div></a>
+                <a href="./main.html"><i class="fas fa-chart-bar"></i> REMINDERS</a>
+                <a href="./diet-plan.html"><i class="fas fa-utensils"></i> Diet Plan</a>
+                <a href="./workout-plan.html"><i class="fas fa-dumbbell"></i> Workout Plan</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Life</h1>
+            <p>Your journey to a healthier lifestyle starts here. Get personalized workout plans, diet advice, and expert guidance.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </div>
+    </section><br>
+
+    <section class="content-section">
+        <h2>Why Choose FitLife?</h2>
+        <div class="section-grid">
+            <div class="info-card">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Health First</h3>
+                <p>Our approach focuses on sustainable health improvements through scientifically-backed methods and personalized guidance.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-apple-alt"></i>
+                <h3>Nutrition Guidance</h3>
+                <p>Get customized meal plans that fit your lifestyle, preferences, and dietary requirements. We make healthy eating simple.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-running"></i>
+                <h3>Expert Workouts</h3>
+                <p>Access professionally designed workout plans that adapt to your fitness level and help you achieve your goals.</p>
+            </div>
+        </div>
+    </section><br>
+
+
+
+    <section class="content-section">
+        <h2>Your Fitness Journey</h2>
+        <div class="section-grid">
+            <div class="info-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Track Progress</h3>
+                <p>Monitor your improvements, track your workouts, and see real results with our advanced tracking tools.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-users"></i>
+                <h3>Community Support</h3>
+                <p>Join a community of like-minded individuals who share your passion for health and fitness.</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-medal"></i>
+                <h3>Achieve Goals</h3>
+                <p>Set meaningful fitness goals and get the support you need to achieve them, one step at a time.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FitLife. All rights reserved.</p>
+    </footer>
+</body>
+</html>
